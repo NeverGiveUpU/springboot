@@ -1,0 +1,23 @@
+common:
+  app-name: test
+  versions:
+    - 1
+    - 2
+    - 3
+  user:
+    user-name: user_name
+    pass-word: pass_word
+
+spring:
+  jackson:
+    property-naming-strategy: LOWER_CAMEL_CASE # 序列化时属性名转换为下划线风格
+    default-property-inclusion: non_null # 序列化时忽略属性值为空的属性
+    date-format: yyyy-MM-dd HH:mm:ss # 日期格式化
+    deserialization:
+      fail_on_unknown_properties: false # 反序列化时忽略json不存在的属性
+    locale: zh_CN
+    parser:
+      allow_single_quotes: true # 允许出现单引号
+      allow_unquoted_control_chars: true #允许出现特殊字符和转义符
+    serialization:
+      fail_on_empty_beans: false # 无法序列化对象时报错

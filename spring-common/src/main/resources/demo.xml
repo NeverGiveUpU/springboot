@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pattern>
+    <sql id="one">
+        select1
+    </sql>
+    <sql id="two">
+        select2
+    </sql>
+</pattern>
