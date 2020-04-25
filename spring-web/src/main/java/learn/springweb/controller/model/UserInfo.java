@@ -1,4 +1,4 @@
-package learn.springweb.model;
+package learn.springweb.controller.model;
 
 import lombok.Data;
 

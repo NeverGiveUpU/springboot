@@ -1,0 +1,8 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 128KB # 文件总大小上限
+      max-request-size: 256KB # 表单总大小上限
+
+storage:
+  location: /Users/chenmeng/Downloads/upload

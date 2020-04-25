@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 @Slf4j
 @WebFilter(filterName = "httpServletRequestWrapperFilter",
-        urlPatterns = {"/*"},
+        urlPatterns = {"/filter/**"},
         asyncSupported = true)
 public class RequestFilter implements Filter {
     @Override
