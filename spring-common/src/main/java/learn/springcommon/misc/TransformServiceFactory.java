@@ -1,4 +1,4 @@
-package learn.springcommon.service;
+package learn.springcommon.misc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -7,7 +7,6 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.stream.Collectors;
 
 /**
  * 根据TransformType动态的决定使用哪一个TransformService，而不是使用Qualifier决定。

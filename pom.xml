@@ -19,7 +19,7 @@
         <module>spring-security</module>
         <module>spring-common</module>
         <module>spring-kafka</module>
-        <module>spring-mybatis</module>
+        <module>spring-sql</module>
         <module>spring-nosql</module>
         <module>spring-web</module>
         <module>spring-security</module>

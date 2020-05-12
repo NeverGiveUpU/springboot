@@ -1,5 +1,6 @@
-package learn.springweb.servlet;
+package learn.springweb.repeatable;
 
+import learn.springweb.utils.RequestHelper;
 import lombok.Getter;
 
 import javax.servlet.ReadListener;
@@ -36,7 +37,7 @@ public class RepeatableReadRequest extends HttpServletRequestWrapper {
      */
     public RepeatableReadRequest(HttpServletRequest request) throws IOException {
         super(request);
-        bodyStr = RequestHelper.readStringByInputStream(request);
+        bodyStr = RequestHelper.readBodyByInputStream(request);
         body = bodyStr.getBytes(StandardCharsets.UTF_8);
     }
 

@@ -8,11 +8,14 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.concurrent.Executor;
+
 @EnableConfigurationProperties(StorageProperties.class)
-@EnableAsync
-@ServletComponentScan
+@EnableAsync //启动异步方法
+@ServletComponentScan //扫描Servlet，例如@WebFilter注解
 @SpringBootApplication
 public class SpringWebApplication {
 
@@ -24,4 +27,6 @@ public class SpringWebApplication {
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
         return builder.build();
     }
+
+
 }

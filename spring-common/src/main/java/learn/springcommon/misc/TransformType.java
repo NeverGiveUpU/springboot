@@ -1,4 +1,4 @@
-package learn.springcommon.service;
+package learn.springcommon.misc;
 
 public enum TransformType {
     TYPE1,

@@ -1,6 +1,6 @@
 package learn.springweb.session;
 
-import learn.springweb.servlet.RequestHelper;
+import learn.springweb.utils.RequestHelper;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

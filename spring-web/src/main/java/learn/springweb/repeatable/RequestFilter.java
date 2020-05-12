@@ -1,4 +1,4 @@
-package learn.springweb.servlet;
+package learn.springweb.repeatable;
 
 import lombok.extern.slf4j.Slf4j;
 

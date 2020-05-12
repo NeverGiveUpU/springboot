@@ -1,4 +1,4 @@
-package learn.springweb.servlet;
+package learn.springweb.utils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

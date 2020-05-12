@@ -1,8 +1,7 @@
 package learn.springweb;
 
 import learn.springweb.controller.async.MyAsyncHandlerInterceptor;
-import learn.springweb.interceptor.Interceptor;
-import learn.springweb.interceptor.RequestInterceptor;
+import learn.springweb.repeatable.RequestInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
@@ -16,20 +15,18 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.MultipartConfigElement;
+import java.util.concurrent.Executor;
 
 @Slf4j
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
     @Autowired
-    Interceptor interceptor;
-    @Autowired
     RequestInterceptor requestInterceptor;
+
     @Autowired
     MyAsyncHandlerInterceptor myAsyncHandlerInterceptor;
 
-    @Autowired
-    ThreadPoolTaskExecutor threadPoolTaskExecutor;
 
     /**
      * 拦截器配置
@@ -37,7 +34,6 @@ public class WebConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(interceptor).addPathPatterns("/**");
         registry.addInterceptor(requestInterceptor).addPathPatterns("/**");
         registry.addInterceptor(myAsyncHandlerInterceptor).addPathPatterns("/**");
     }
@@ -57,7 +53,7 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     /**
-     * 异步请求的默认配置修改
+     * 异步请求的默认配置
      * @param configurer
      */
     @Override
@@ -65,7 +61,7 @@ public class WebConfig implements WebMvcConfigurer {
         //超时时间
         configurer.setDefaultTimeout(60 * 1000);
         //处理的线程池
-        configurer.setTaskExecutor(threadPoolTaskExecutor);
+        configurer.setTaskExecutor(taskExecutor());
         //超时后拦截器处理设置
         configurer.registerCallableInterceptors(timeoutCallableProcessingInterceptor());
     }
@@ -73,5 +69,20 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public TimeoutCallableProcessingInterceptor timeoutCallableProcessingInterceptor() {
         return new TimeoutCallableProcessingInterceptor();
+    }
+
+    /**
+     * 线程池
+     * @return
+     */
+    @Bean
+    public ThreadPoolTaskExecutor taskExecutor() {
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        executor.setCorePoolSize(2);
+        executor.setMaxPoolSize(2);
+        executor.setQueueCapacity(500);
+        executor.setThreadNamePrefix("GithubLookup-");
+        executor.initialize();
+        return executor;
     }
 }

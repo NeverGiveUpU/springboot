@@ -1,4 +1,4 @@
-package learn.springcommon;
+package learn.springcommon.misc;
 
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;

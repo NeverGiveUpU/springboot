@@ -1,4 +1,4 @@
-package learn.springweb.servlet;
+package learn.springweb.utils;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +16,7 @@ public class RequestHelper {
      * @return
      * @throws IOException
      */
-    public static String readStringByReader(HttpServletRequest request) throws IOException {
+    public static String readBodyByReader(HttpServletRequest request) throws IOException {
         StringBuilder sb = new StringBuilder();
         try (BufferedReader br = request.getReader()) {
             String str;
@@ -27,7 +27,7 @@ public class RequestHelper {
         return sb.toString();
     }
 
-    public static String readStringByInputStream(HttpServletRequest request) throws IOException {
+    public static String readBodyByInputStream(HttpServletRequest request) throws IOException {
         StringBuilder sb = new StringBuilder();
         try (InputStream is = request.getInputStream()) {
             byte[] bytes = new byte[4096];
@@ -38,7 +38,7 @@ public class RequestHelper {
         return sb.toString();
     }
 
-    public static byte[] readBinary(HttpServletRequest request) throws IOException {
+    public static byte[] readBody(HttpServletRequest request) throws IOException {
         int len = request.getContentLength();
         byte[] bytes = new byte[len];
         try (InputStream is = request.getInputStream()) {

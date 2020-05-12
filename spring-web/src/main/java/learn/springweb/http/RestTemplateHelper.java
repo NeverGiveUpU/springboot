@@ -1,8 +1,7 @@
-package learn.springcommon.http;
+package learn.springweb.http;
 
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.net.URISyntaxException;
 import java.util.*;
 
 public class RestTemplateHelper {

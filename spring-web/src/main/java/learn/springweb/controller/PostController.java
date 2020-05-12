@@ -2,7 +2,7 @@ package learn.springweb.controller;
 
 import learn.springweb.controller.support.Result;
 import learn.springweb.controller.model.UserInfo;
-import learn.springweb.servlet.RequestHelper;
+import learn.springweb.utils.RequestHelper;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -14,9 +14,12 @@ import java.util.Objects;
 @RequestMapping("/post")
 public class PostController {
 
-//    @Autowired
-//    private HttpServletRequest request;
 
+    /**
+     * 接收json数据
+     * @param userInfo
+     * @return
+     */
     @PostMapping("/json")
     public Result<Object> json(@RequestBody UserInfo userInfo) {
         Result<Object> result = new Result<>(Result.SUCCESS_RESULT);
@@ -24,14 +27,25 @@ public class PostController {
         return result;
     }
 
+    /**
+     * 接收request数据
+     * @param request
+     * @return
+     * @throws Exception
+     */
     @PostMapping("/json/origin")
     public Result<Object> jsonOrigin(HttpServletRequest request) throws Exception {
         Result<Object> result = new Result<>(Result.SUCCESS_RESULT);
-        String bodyStr = RequestHelper.readStringByInputStream(request);
+        String bodyStr = RequestHelper.readBodyByInputStream(request);
         result.setData(bodyStr);
         return result;
     }
 
+    /**
+     * 接收表单
+     * @param request
+     * @return
+     */
     @PostMapping("/form-data")
     public Result<Object> formData(MultipartHttpServletRequest request) {
         String text = request.getParameter("textKey");
