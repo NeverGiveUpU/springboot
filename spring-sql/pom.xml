@@ -7,7 +7,7 @@
 		<artifactId>springboot</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>spring-mybatis</artifactId>
+	<artifactId>spring-sql</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-mybatis</name>
 	<description>Demo project for Spring Boot</description>

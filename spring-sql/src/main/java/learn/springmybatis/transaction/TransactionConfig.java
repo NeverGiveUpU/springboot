@@ -15,7 +15,7 @@ public class TransactionConfig implements TransactionManagementConfigurer {
     @Resource(name = "transactionManager1")
     private PlatformTransactionManager defaultTransactionManager;
 
-    //返回默认的事务管理器
+    //默认的事务管理器
     @Override
     public PlatformTransactionManager annotationDrivenTransactionManager() {
         return defaultTransactionManager;

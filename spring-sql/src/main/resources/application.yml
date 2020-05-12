@@ -1,6 +1,4 @@
-
-
-custom:
+mixed:
   datasource:
     enable: true
     properties:
@@ -10,3 +8,7 @@ custom:
         username: root
         password: 3401231996
         driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true

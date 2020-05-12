@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Component
-@ConfigurationProperties(prefix = "custom.datasource")
+@ConfigurationProperties(prefix = "mixed.datasource")
 public class DataSourceProperties {
     private boolean enable;
     private List<DataSourceProperty> properties;
