@@ -1,7 +1,7 @@
 package learn.springweb.controller;
 
-import learn.springweb.controller.service.storage.StorageFileNotFoundException;
-import learn.springweb.controller.service.storage.StorageService;
+import learn.springweb.service.storage.StorageFileNotFoundException;
+import learn.springweb.service.storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;

@@ -6,12 +6,14 @@ package learn.springweb.session;
  * @see SessionFilter
  */
 public class SessionContext {
+
     private static ThreadLocal<SessionInfo> sessionContext = new ThreadLocal<>();
 
     public static void setSessionInfo(SessionInfo sessionInfo) {
         sessionContext.set(sessionInfo);
     }
 
+    //get SessionInfo of current thread
     public static SessionInfo getSessionInfo() {
         SessionInfo sessionInfo = sessionContext.get();
         if (sessionInfo == null) {

@@ -42,6 +42,9 @@ public class RepeatableReadRequest extends HttpServletRequestWrapper {
     }
 
     /**
+     * 原始方法只能读取一次（流只能读一次），@ResponseBody自动绑定调用该方法读取body。
+     * 所以重写该方法，变成可重复读。
+     * 具体实现是构造并返回新的流。
      * @return
      * @throws IOException
      */

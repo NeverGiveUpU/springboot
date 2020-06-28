@@ -1,6 +1,6 @@
 package learn.springweb.controller;
 
-import learn.springweb.controller.support.Result;
+import learn.springweb.support.Result;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/get")

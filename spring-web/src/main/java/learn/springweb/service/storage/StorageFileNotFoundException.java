@@ -1,4 +1,4 @@
-package learn.springweb.controller.service.storage;
+package learn.springweb.service.storage;
 
 public class StorageFileNotFoundException extends StorageException {
 

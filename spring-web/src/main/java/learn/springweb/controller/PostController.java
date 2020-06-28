@@ -1,7 +1,7 @@
 package learn.springweb.controller;
 
-import learn.springweb.controller.support.Result;
-import learn.springweb.controller.model.UserInfo;
+import learn.springweb.support.Result;
+import learn.springweb.model.UserInfo;
 import learn.springweb.utils.RequestHelper;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;

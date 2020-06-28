@@ -1,7 +1,7 @@
 package learn.springweb;
 
-import learn.springweb.controller.async.MyAsyncHandlerInterceptor;
-import learn.springweb.repeatable.RequestInterceptor;
+import learn.springweb.async.MyAsyncHandlerInterceptor;
+import learn.springweb.repeatable.RepeatableInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
@@ -15,14 +15,13 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.MultipartConfigElement;
-import java.util.concurrent.Executor;
 
 @Slf4j
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
     @Autowired
-    RequestInterceptor requestInterceptor;
+    RepeatableInterceptor repeatableInterceptor;
 
     @Autowired
     MyAsyncHandlerInterceptor myAsyncHandlerInterceptor;
@@ -34,8 +33,8 @@ public class WebConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(requestInterceptor).addPathPatterns("/**");
-        registry.addInterceptor(myAsyncHandlerInterceptor).addPathPatterns("/**");
+        registry.addInterceptor(repeatableInterceptor).addPathPatterns("/repeatable/*");
+        registry.addInterceptor(myAsyncHandlerInterceptor).addPathPatterns("/async/*");
     }
 
     /**

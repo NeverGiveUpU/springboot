@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * 对request进行包装的Filter
+ * 过滤器，对request进行包装
  */
 @Slf4j
 @WebFilter(filterName = "httpServletRequestWrapperFilter",
-        urlPatterns = {"/filter/**"},
+        urlPatterns = {"/repeatable/*"},
         asyncSupported = true)
 public class RequestFilter implements Filter {
     @Override

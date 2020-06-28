@@ -1,4 +1,4 @@
-package learn.springweb.controller.support;
+package learn.springweb.support;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

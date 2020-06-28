@@ -1,4 +1,4 @@
-package learn.springweb.controller.async;
+package learn.springweb.async;
 
 import lombok.Data;
 import org.springframework.web.context.request.async.DeferredResult;

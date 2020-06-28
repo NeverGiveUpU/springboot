@@ -15,6 +15,7 @@ public class ObjectMapperHelper {
      */
     public static ObjectMapper getObjectMapper() {
         ObjectMapper objectMapper = new ObjectMapper();
+
         objectMapper
                 //序列化 去除默认值
                 .setSerializationInclusion(JsonInclude.Include.NON_EMPTY)
@@ -25,6 +26,7 @@ public class ObjectMapperHelper {
                 .configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true)
                 //允许单引号出现
                 .configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
+
         //字段保留, null值转为""
         objectMapper
                 .getSerializerProvider()

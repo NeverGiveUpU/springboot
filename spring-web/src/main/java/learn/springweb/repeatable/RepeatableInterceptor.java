@@ -1,5 +1,6 @@
 package learn.springweb.repeatable;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -8,10 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 在拦截器中读取包装后的request
+ * 拦截器，读取包装后的request
  */
+@Slf4j
 @Component
-public class RequestInterceptor implements HandlerInterceptor {
+public class RepeatableInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         handleRequestBody(request);
@@ -31,7 +33,7 @@ public class RequestInterceptor implements HandlerInterceptor {
     private void handleRequestBody(HttpServletRequest request) {
         //如果是可重复读的request，处理requestBody
         if (request instanceof RepeatableReadRequest) {
-            System.out.println(((RepeatableReadRequest) request).getBodyStr());
+            log.info(((RepeatableReadRequest) request).getBodyStr());
         }
     }
 }

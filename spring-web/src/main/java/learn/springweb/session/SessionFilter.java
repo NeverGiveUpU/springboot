@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * 为当前线程的SessionContext赋值的Filter
+ * 过滤器，为当前线程的SessionContext赋值
  */
-@WebFilter(filterName = "sessionFilter", urlPatterns = {"/*"})
+@WebFilter(filterName = "sessionFilter", urlPatterns = {"/session/*"})
 public class SessionFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {

@@ -1,4 +1,4 @@
-package learn.springweb.controller.async;
+package learn.springweb.async;
 
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;

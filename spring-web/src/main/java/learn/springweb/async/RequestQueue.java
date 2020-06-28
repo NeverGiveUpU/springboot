@@ -1,4 +1,4 @@
-package learn.springweb.controller.async;
+package learn.springweb.async;
 
 import lombok.Getter;
 import org.springframework.stereotype.Component;

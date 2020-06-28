@@ -1,6 +1,6 @@
 package learn.springweb;
 
-import learn.springweb.controller.service.storage.StorageProperties;
+import learn.springweb.service.storage.StorageProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -8,10 +8,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableAsync;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.concurrent.Executor;
 
 @EnableConfigurationProperties(StorageProperties.class)
 @EnableAsync //启动异步方法
