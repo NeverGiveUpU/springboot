@@ -11,6 +11,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-common</name>
     <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>1.8</java.version>
@@ -33,6 +34,17 @@
             <artifactId>spring-boot-starter-json</artifactId>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-lang</artifactId>
+                    <groupId>commons-lang</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
     </dependencies>
 
     <build>
@@ -40,6 +52,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                </configuration>
             </plugin>
         </plugins>
     </build>

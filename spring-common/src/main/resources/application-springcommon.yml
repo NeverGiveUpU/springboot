@@ -21,3 +21,10 @@ spring:
       allow_unquoted_control_chars: true #允许出现特殊字符和转义符
     serialization:
       fail_on_empty_beans: false # 无法序列化对象时报错
+
+
+storage:
+  active: local
+  local:
+    address: http://localhost:8080/wx/storage/fetch/
+    storage-path: /Users/chenmeng/Downloads/upload

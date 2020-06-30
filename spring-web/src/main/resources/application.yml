@@ -3,6 +3,11 @@ spring:
     multipart:
       max-file-size: 128KB # 文件总大小上限
       max-request-size: 256KB # 表单总大小上限
+  profiles:
+    active: springcommon
 
-storage:
-  location: /Users/chenmeng/Downloads/upload
+#storage:
+#  active: local
+#  local:
+#    address: http://localhost:8080/wx/storage/fetch/
+#    storage-path: /Users/chenmeng/Downloads/upload
